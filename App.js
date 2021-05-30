@@ -16,7 +16,7 @@ import * as Font from "expo-font";
 
 const queryClient = new QueryClient();
 export default function App() {
-  const [auth, setauth] = useState(false);
+  const [auth, setauth] = useState(true);
   const [isLoading, setisLoading] = useState(true);
   const getData = async () => {
     try {
@@ -30,36 +30,36 @@ export default function App() {
       // error reading value
     }
   };
-  useEffect(() => {
-    const LoadFont = async () => {
-      await Font.loadAsync({
-        Roboto: require("native-base/Fonts/Roboto.ttf"),
-        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      });
-    };
-    LoadFont();
-  }, []);
-  useEffect(() => {
-    api
-      .get(config.api + "signin")
-      .then((res) => {
-        console.log("suceess");
-        getData();
-        setisLoading(false);
-      })
-      .catch((e) => {
-        console.log("no");
-        AsyncStorage.removeItem("auth");
-        setauth(false);
-        setisLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   const LoadFont = async () => {
+  //     await Font.loadAsync({
+  //       Roboto: require("native-base/Fonts/Roboto.ttf"),
+  //       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+  //     });
+  //   };
+  //   LoadFont();
+  // }, []);
+  // useEffect(() => {
+  //   api
+  //     .get(config.api + "signin")
+  //     .then((res) => {
+  //       console.log("suceess");
+  //       getData();
+  //       setisLoading(false);
+  //     })
+  //     .catch((e) => {
+  //       console.log("no");
+  //       AsyncStorage.removeItem("auth");
+  //       setauth(false);
+  //       setisLoading(false);
+  //     });
+  // }, []);
 
-  if (isLoading) return <Splash />;
+  // if (isLoading) return <Splash />;
 
   return (
     <QueryClientProvider client={queryClient}>
-      {!auth && <Login setauth={setauth}></Login>}
+      {/* {!auth && <Login setauth={setauth}></Login>} */}
       {/* <Video></Video> */}
       {auth && (
         <NavigationContainer>

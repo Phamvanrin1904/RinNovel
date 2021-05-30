@@ -8,6 +8,7 @@ import User from "./screens/user/index";
 import RootCourse from "./screens/course/RootCourse";
 import Document from "./screens/document";
 import RootBlog from "./screens/blog/RootBlog";
+import RootLightNovel from "./screens/lightnovel/RootLightNovel";
 const Tab = createBottomTabNavigator();
 function TabNav(props) {
   return (
@@ -18,9 +19,9 @@ function TabNav(props) {
     >
       <Tab.Screen
         name="Forum"
-        component={Forum}
+        component={RootLightNovel}
         options={{
-          tabBarLabel: "Forum",
+          tabBarLabel: "Thảo luận",
           tabBarIcon: ({ tintColor, focused }) => {
             return (
               <MaterialCommunityIcons
@@ -47,38 +48,6 @@ function TabNav(props) {
         }}
         name="Blog"
         component={RootBlog}
-      />
-      <Tab.Screen
-        options={{
-          tabBarLabel: "Khóa học",
-          tabBarIcon: ({ tintColor, focused }) => {
-            return (
-              <MaterialCommunityIcons
-                name={focused ? "alpha-c-box" : "alpha-c-box-outline"}
-                color={"#007bff"}
-                size={20}
-              />
-            );
-          },
-        }}
-        name="Khóa học"
-        component={RootCourse}
-      />
-      <Tab.Screen
-        options={{
-          tabBarLabel: "Tài liệu",
-          tabBarIcon: ({ tintColor, focused }) => {
-            return (
-              <MaterialCommunityIcons
-                name={focused ? "file-document" : "file-document-outline"}
-                color={"#007bff"}
-                size={20}
-              />
-            );
-          },
-        }}
-        name="Document"
-        component={Document}
       />
       <Tab.Screen
         options={{

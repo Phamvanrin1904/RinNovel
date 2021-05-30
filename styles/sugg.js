@@ -46,13 +46,13 @@ const styles = StyleSheet.create({
     // height: "55%",
     borderRadius: 10,
     // backgroundColor:"#ddd",
-    paddingVertical: 5,
+    // paddingVertical: 5,
   },
   descTx: {
     fontSize: 13,
     textAlign: "left",
-    lineHeight: 23,
-    marginBottom: 10,
+    // lineHeight: 23,
+    // marginBottom: 10,
   },
   rating: {
     width: 200,
